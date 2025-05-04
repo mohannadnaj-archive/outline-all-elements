@@ -1,24 +1,32 @@
 {
-    "name": "Outline All Elements",
-    "version": "1.0",
-    "description": "Add CSS Outline property to all elements on the page for debugging CSS Layout.",
-    "manifest_version": 3,
-    "background": {
-        "service_worker": "background.js"
-    },
-    "permissions": ["activeTab", "scripting"],
-    "action": {
-        "default_icon": {
-            "16": "icon_16.png",
-            "32": "icon_32.png",
-            "48": "icon_48.png",
-            "128": "icon_128.png"
-        }
-    },
-    "icons": {
+  "name": "Outline All Elements",
+  "version": "1.1",
+  "description": "Add CSS Outline property to all elements on the page for debugging CSS Layout.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_icon": {
       "16": "icon_16.png",
       "32": "icon_32.png",
       "48": "icon_48.png",
       "128": "icon_128.png"
     }
+  },
+  "icons": {
+    "16": "icon_16.png",
+    "32": "icon_32.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+  "commands": {
+    "toggle-outlines": {
+      "suggested_key": {
+        "default": "Alt+Shift+O"
+      },
+      "description": "Toggle element outlines"
+    }
+  }
 }

@@ -1,21 +1,23 @@
 ## Outline All Elements
 
-A Chrome Extension for adding CSS Outline property (with different colors) to all elements on the page.
+A Chrome Extension that adds colored outlines to all page elements for CSS debugging.
 
-Mainly this is useful for debugging CSS Layout and discovering potential issues.
+### Usage:
 
-Notes:
+- ![icon](/icon_16.png) Click the extension icon to activate/deactivate.
+- **Keyboard Shortcut**: Press `Alt+Shift+O` (Windows/Linux) or `⌥ Option + ⇧ Shift + O` (Mac) to toggle outlines. This shortcut can be customized from `chrome://extensions/shortcuts`.
+- Colors: Unique hue per element (`(elementOrder * 137.5) % 360`, 100% saturation)
+- Nesting: Lightness varies by DOM depth (shallow=lighter, deep=darker)
 
-- ![icon](/icon_16.png) Click the extension icon for activating/deactivating.
+### Technical details:
 
-- The outline colors are randomized based on it's order on the page.
-
-- The colors are randomized by assigning different cumulative Hue degree and a fixed Saturation (99%) and Light (50%).
-
-- On deactivating, the extension will restore the old `outline` value if it was there, and remove the `style` HTML attribute if it wasn't there before activating.
+- Outlines all visible elements (width/height > 1px)
+- 2px solid outlines with !important flag
+- Elements tagged with data attributes for tracking
+- MutationObserver tracks DOM changes
 
 ![screenshot](https://i.imgur.com/OUvjZdx.png)
 
-Credits:
+### Credits:
 
 - [Dalibor Gogic](https://github.com/daliborgogic)'s suggestion on [this gist by Addy Osmani](https://gist.github.com/addyosmani/fd3999ea7fce242756b1)
